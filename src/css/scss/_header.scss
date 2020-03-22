@@ -1,0 +1,110 @@
+.dd-header {
+  position: relative;
+}
+
+#dd-nav {
+  z-index: 10;
+}
+
+.navbar {
+  padding: 0;
+
+  .navbar-nav {
+    align-items: center;
+  }
+
+  .nav-item.active {
+    .nav-link {
+      color: $custom-primary;
+    }
+  }
+
+  .nav-item:not(:last-child) {
+    margin-right: rem(12);
+  }
+
+  .nav-link {
+    font-size: rem(18);
+    color: $white;
+    @include transition;
+    padding: 0 0 0 0;
+    font-weight: 500;
+
+    &:hover {
+      color: $custom-primary;
+    }
+  }
+}
+
+.navbar-brand {
+  padding: 0;
+
+  img {
+    width: rem(120);
+  }
+}
+
+.navbar-toggler-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+
+  span {
+    display: block;
+    width: 100%;
+    height: rem(2);
+    background-color: $white;
+    border-radius: rem(10);
+  }
+
+  span:not(:first-child):not(:last-child) {
+    margin: rem(7) 0;
+    width: 80%;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    .nav-item:not(:last-child) {
+      margin: rem(10) 0;
+    }
+
+    .nav-item {
+      width: 100%;
+    }
+  }
+
+  #dd-nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: rem(150);
+
+    .navbar-nav {
+      border-radius: rem(12);
+      background: #1c1d25;
+      box-shadow: inset 5px 5px 7px #17181f, inset -5px -5px 7px #21222b;
+      padding: rem(15) rem(25);
+      margin: rem(15) 0 0;
+    }
+  }
+
+  .logo {
+    display: flex;
+    width: 100%;
+    align-items: center;
+
+    .navbar-brand {
+      margin-right: auto;
+      img {
+        width: 80px;
+      }
+    }
+
+    .btn {
+      font-size: 0.7rem;
+      padding: 0.4rem 1rem;
+    }
+  }
+}

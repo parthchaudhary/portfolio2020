@@ -1,0 +1,101 @@
+// custom vars
+$theme-color: #1c1d25;
+$custom-primary: #f8ff2d;
+$white: #ffffff;
+$font-family-montserrat: "Montserrat", sans-serif;
+$base-size: 16;
+$bg-light: #272830;
+
+// bootstrap vars over-ride
+$blue: $custom-primary !default;
+$body-bg: $theme-color !default;
+$body-color: $white !default;
+$font-family-base: $font-family-montserrat !default;
+$container-width: 1140px;
+
+$container-max-widths: (
+  sm: $container-width,
+  md: $container-width,
+  lg: $container-width,
+  xl: $container-width
+) !default;
+
+// bootstarp
+@import "~bootstrap/scss/bootstrap.scss";
+// font awsome
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+
+// function
+@function rem($value) {
+  $rem: ($value / $base-size) + rem;
+
+  @return $rem;
+}
+
+// mixins
+@mixin transition {
+  transition: all ease-in-out 0.3s;
+}
+
+@mixin button-resets {
+  border-radius: rem(50);
+  padding: rem(18);
+}
+
+@mixin theme-neumorphic {
+  border-radius: 50px;
+  background: #1c1d25;
+  box-shadow: 11px 11px 22px #17181f, -11px -11px 22px #21222b;
+}
+
+// default
+.bg--light {
+  background-color: $bg-light;
+}
+.btn {
+  border-radius: rem(50);
+  font-weight: 600;
+  font-size: rem(14);
+  padding: rem(8) rem(20);
+  letter-spacing: 1px;
+}
+
+.btn-lg {
+  font-size: rem(18);
+  padding: rem(12) rem(35);
+}
+
+h1 {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: rem(58);
+  line-height: rem(65);
+  letter-spacing: rem(2);
+  margin: 0 0 rem(20);
+}
+
+p {
+  font-size: rem(20);
+  font-weight: 400;
+  line-height: rem(25);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 991px) {
+  h1 {
+    font-size: rem(45);
+    line-height: rem(50);
+  }
+
+  p {
+    font-size: rem(18);
+    line-height: rem(25);
+  }
+}
+
+@media (max-width: 767px) {
+}
+
+// header
+@import "./header";
+@import "./content";
